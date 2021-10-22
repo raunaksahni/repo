@@ -35,16 +35,6 @@
 <?php endif; ?>
 </div> 
 
-<?php
-    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-    $product = $objectManager->create('Magento\Catalog\Model\Product')->load($_product->getId());        
-    $images = $product->getMediaGalleryImages();
-    foreach($images as $child){ ?>
-        <img src="<?php echo $child->getUrl(); ?>" >
-<?php } ?>
-
-
-
 
 <!-----------Custom code start-----------call a block------> 
 <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('rk')->toHtml();?>
